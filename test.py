@@ -5,10 +5,10 @@ import data_loader.data_loaders as module_data
 import model.loss as module_loss
 import model.metric as module_metric
 import model.model as module_arch
-from parse_config import ConfigParser
+from config_parser import ConfigParser
 
 
-def main(config, resume):
+def main(config):
     logger = config.get_logger('test')
 
     # setup data_loader instances
@@ -78,4 +78,4 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     config = ConfigParser(args)
-    main(config, args.resume)
+    main(config)
